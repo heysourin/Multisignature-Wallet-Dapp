@@ -16,4 +16,13 @@ contract MultisignatureWallet {
 
     address[] owners;
     mapping (address => bool) public isOwner;//isOnwer[address] = true/false
+    uint public numConfirmationRequired;
+
+    struct Tansaction{
+        address to;
+        uint value;
+        bytes data;
+        bool executed;
+        uint numConfirmations
+    }
 }
